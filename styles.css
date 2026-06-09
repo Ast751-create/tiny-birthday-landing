@@ -1064,6 +1064,73 @@ h3 {
   font-size: 0.95rem;
 }
 
+/* reviews */
+.reviews {
+  background: var(--bg);
+}
+
+.review-grid {
+  margin-top: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.review-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.6rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.stars {
+  color: #f5b301;
+  letter-spacing: 2px;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.review-card p {
+  color: var(--ink);
+  font-size: 0.96rem;
+  line-height: 1.55;
+  margin: 0 0 1.1rem;
+}
+
+.review-card footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.review-name {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.review-src {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+.reviews-link {
+  display: inline-block;
+  margin-top: 1.6rem;
+  text-align: center;
+  width: 100%;
+  color: var(--sage);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reviews-link:hover {
+  text-decoration: underline;
+}
+
 /* faq */
 .faq-list {
   max-width: 760px;
@@ -1168,7 +1235,8 @@ h3 {
   }
 
   .offer-grid,
-  .venue-grid {
+  .venue-grid,
+  .review-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1216,7 +1284,8 @@ h3 {
 
 @media (max-width: 620px) {
   .offer-grid,
-  .venue-grid {
+  .venue-grid,
+  .review-grid {
     grid-template-columns: 1fr;
   }
 
