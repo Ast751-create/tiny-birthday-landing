@@ -245,20 +245,38 @@ h3 {
 .hero-layout {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
-  gap: 3rem;
+  grid-template-areas:
+    "head visual"
+    "body visual";
+  column-gap: 3rem;
   align-items: center;
 }
 
-.hero-copy h1 {
+.hero-head {
+  grid-area: head;
+  align-self: end;
+}
+
+.hero-visual {
+  grid-area: visual;
+  align-self: center;
+}
+
+.hero-body {
+  grid-area: body;
+  align-self: start;
+}
+
+.hero-head h1 {
   margin-top: 0.4rem;
 }
 
-.hero-copy .lead {
+.hero-body .lead {
   font-size: clamp(1.02rem, 1.4vw, 1.18rem);
   font-weight: 400;
   line-height: 1.5;
   color: var(--ink-soft);
-  margin-top: 1rem;
+  margin-top: 1.2rem;
 }
 
 .hero-points {
@@ -1232,6 +1250,16 @@ h3 {
 
   .hero-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "visual"
+      "body";
+    row-gap: 1.2rem;
+  }
+
+  .hero-head,
+  .hero-body {
+    align-self: auto;
   }
 
   .offer-grid,
@@ -1249,7 +1277,11 @@ h3 {
   }
 
   .hero-visual {
-    max-height: 560px;
+    aspect-ratio: 4 / 5;
+    max-height: 420px;
+    width: auto;
+    max-width: 100%;
+    justify-self: center;
   }
 
   .steps-grid {
@@ -1316,11 +1348,15 @@ h3 {
   }
 
   .hero-layout {
-    gap: 1.6rem;
+    row-gap: 1.1rem;
   }
 
-  .hero-copy .lead {
-    margin-top: 0.7rem;
+  .hero-head h1 {
+    font-size: clamp(1.85rem, 7.5vw, 2.6rem);
+  }
+
+  .hero-body .lead {
+    margin-top: 0.2rem;
   }
 
   .hero-points {
